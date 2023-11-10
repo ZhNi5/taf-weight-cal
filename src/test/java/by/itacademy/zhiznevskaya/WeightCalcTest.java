@@ -17,7 +17,7 @@ public class WeightCalcTest {
         WebElement submitElement = driver.findElement(submitXpathBy);
         submitElement.click();
         //assertEquals(char expected, char actual, String message)
-        String ExpectedMessage="Не указано имя.\n" +
+        String expectedMessage="Не указано имя.\n" +
                 "Рост должен быть в диапазоне 50-300 см.\n" +
                 "Вес должен быть в диапазоне 3-500 кг.\n" +
                 "Не указан пол.";
@@ -25,7 +25,7 @@ public class WeightCalcTest {
         By expectedMessageTextXpathBy = By.xpath(expectedMessageTextXpath);
         WebElement textElement = driver.findElement(expectedMessageTextXpathBy);
         String actualMessage =textElement.getText();
-        Assertions.assertEquals(ExpectedMessage,actualMessage);
+        Assertions.assertEquals(expectedMessage,actualMessage);
         //driver.close();
     }
 }
