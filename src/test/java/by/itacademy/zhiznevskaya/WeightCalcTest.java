@@ -13,19 +13,19 @@ public class WeightCalcTest {
         WebDriver driver = new ChromeDriver();
         driver.get("https://svyatoslav.biz/testlab/wt/index.php");
         String clickSubmitXpath = "//input[@type=\"submit\"]";
-        By SubmitXpathBy = By.xpath(clickSubmitXpath);
-        WebElement SubmitElement = driver.findElement(SubmitXpathBy);
-        SubmitElement.click();
+        By submitXpathBy = By.xpath(clickSubmitXpath);
+        WebElement submitElement = driver.findElement(submitXpathBy);
+        submitElement.click();
         //assertEquals(char expected, char actual, String message)
         String ExpectedMessage="Не указано имя.\n" +
                 "Рост должен быть в диапазоне 50-300 см.\n" +
                 "Вес должен быть в диапазоне 3-500 кг.\n" +
                 "Не указан пол.";
-        String ExpectedMessageTextXpath = "/html/body/table/tbody/tr[2]/td[2]/form/table/tbody/tr[1]/td/b";
-        By ExpectedMessageTextXpathBy = By.xpath(ExpectedMessageTextXpath);
-        WebElement textElement = driver.findElement(ExpectedMessageTextXpathBy);
-        String ActualMessage =textElement.getText();
-        Assertions.assertEquals(ExpectedMessage,ActualMessage);
+        String expectedMessageTextXpath = "/html/body/table/tbody/tr[2]/td[2]/form/table/tbody/tr[1]/td/b";
+        By expectedMessageTextXpathBy = By.xpath(expectedMessageTextXpath);
+        WebElement textElement = driver.findElement(expectedMessageTextXpathBy);
+        String actualMessage =textElement.getText();
+        Assertions.assertEquals(ExpectedMessage,actualMessage);
         //driver.close();
     }
 }
